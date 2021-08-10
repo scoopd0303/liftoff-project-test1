@@ -1,6 +1,6 @@
 
 window.addEventListener('load', () => {
-     let userDropdown = document.getElementById('user-info');
+    let userDropdown = document.getElementById('user-info');
     let dropdownMenu = document.querySelector('.nav-dropdown');
 
     userDropdown.addEventListener('click', () => {

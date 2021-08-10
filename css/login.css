@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+} .heading {
+    font-family: Josefin Slab;
+    margin: 0;
+    letter-spacing: 1ex;
+    color: white;
+} .nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background-color: rgba(64,110,88,1);
+    box-shadow: 0px 2px rgba(0,0,0,0.5);
+    z-index: 5;
+} .nav-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    margin: 0 5px;
+} .nav-link {
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+} .nav-link:hover {
+    box-shadow: inset 1px -1px 5px rgba(0,0,0,0.5);
+} #page-heading {
+    pointer-events: none;
+} 
+
+.section {
+    width: 100%;
+    height: 450px;
+    margin: 100px 0 0 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} #login-form {
+    /* border: 1px solid red; */
+    box-shadow: -2px 2px rgba(0,0,0,0.5), 2px -2px 5px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+    padding: 20px;
+} .form-text {
+    font-family: Josefin Slab;
+    letter-spacing: 1ex;
+} .form-button {
+    font-family: Josefin Slab;
+    letter-spacing: 1ex;
+    padding: 5px 0;
+    cursor: pointer;
+} .login-field {
+    font-family: Josefin Slab;
+} #sign-up-text {
+    font-family: Josefin Slab;
+    letter-spacing: 0.5ex;
+}

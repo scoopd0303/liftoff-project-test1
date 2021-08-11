@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
         let searchQuery = document.querySelector('input[name=search-query]').value;
 
         let fetchString = returnFetchString(searchQuery);
-        // console.log(fetchString)
+
         let json = [];
 
 
@@ -37,53 +37,32 @@ window.addEventListener('load', function() {
             response.json().then(function(json) {
 
                 let jsonItems = json.items;
-                // console.log(jsonItems)
+                
+                for (i = 0; i < jsonItems.length; i++) {
 
-                // if (jsonItems.length > 10) {
-                //     for (i = 0; i < 10; i++) {
+                    let thumbnail = "";
+                    if(jsonItems[i].volumeInfo.imageLinks === undefined) {
+                        thumbnail = 'images/not-found.png';
+                    } else {
+                        thumbnail = jsonItems[i].volumeInfo.imageLinks.thumbnail;
+                    }
 
-                //         // console.log(json[i].volumeInfo)
-                //         let book = {
-                //             title: jsonItems[i].volumeInfo.title,
-                //             author: jsonItems[i].volumeInfo.authors.toString(),
-                //             thumbnail: jsonItems[i].volumeInfo.imageLinks.thumbnail
-                //         }
+                    
 
-                //         let result = document.createElement('div');
+                    let book = {
+                        title: jsonItems[i].volumeInfo.title,
+                        author: jsonItems[i].volumeInfo.authors,
+                        thumbnail: thumbnail
+                    }
 
-                //         result.classList.add('result');
+                    let result = document.createElement('div');
 
-                //         result.innerHTML = returnObjectFieldsAsHtml(book);
+                    result.classList.add('result');
 
-                //         results.appendChild(result);
-                //     }
-                // } else {
-                    for (i = 0; i < jsonItems.length; i++) {
+                    result.innerHTML = returnObjectFieldsAsHtml(book);
+                    
+                    results.appendChild(result);
 
-                        // console.log(jsonItems[i].volumeInfo)
-                        let thumbnail = "";
-                        if(jsonItems[i].volumeInfo.imageLinks === undefined) {
-                            thumbnail = 'images/not-found.png';
-                        } else {
-                            thumbnail = jsonItems[i].volumeInfo.imageLinks.thumbnail;
-                        }
-
-                        
-
-                        let book = {
-                            title: jsonItems[i].volumeInfo.title,
-                            author: jsonItems[i].volumeInfo.authors,
-                            thumbnail: thumbnail
-                        }
-
-                        let result = document.createElement('div');
-
-                        result.classList.add('result');
-
-                        result.innerHTML = returnObjectFieldsAsHtml(book);
-                        
-                        results.appendChild(result);
-                    // }
                 }
 
             });

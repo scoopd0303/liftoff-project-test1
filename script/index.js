@@ -1,5 +1,20 @@
 
 window.addEventListener('load', () => {
+    let json = [];
+    // let book = {}
+    // fetch("https://www.googleapis.com/books/v1/volumes/cLhVjQGs83QC").then(function(response) {
+    fetch("https://www.googleapis.com/books/v1/volumes?q=earthsea").then(function(response) {
+        response.json().then(function(json) {
+            console.log(json);
+            // book = {
+            //     title: json.volumeInfo.title,
+            //     author: json.volumeInfo.authors.toString(),
+            //     thumbnail: json.volumeInfo.imageLinks.thumbnail
+            // };
+        });
+    });
+    // console.log(book);
+
     let userDropdown = document.getElementById('user-info');
     let dropdownMenu = document.querySelector('.nav-dropdown');
 

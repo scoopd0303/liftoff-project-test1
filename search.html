@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Oswald&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/search.css">
+
+    <title>search</title>
+
+</head>
+<body>
+
+    <div class="page-container">
+
+        <div id="top-nav" class="nav-bar">
+            
+            <div id="page-heading" class="nav-item">
+                <h1 class="heading">page title</h1>
+            </div>
+            
+        </div>
+
+        <div id="search-form-container" class="section">
+            <form id="search-form" name="search-form">
+                <label class="form-text">
+                    <input type="text" name="search-query" placeholder="search . . ." id="search-field" class="form-text">
+                </label>
+                <!-- <button class="form-button">submit</button> -->
+                <input type="submit" value="search" class="form-button">
+            </form>
+        </div>
+
+        <div id="results-container" class="section">
+            <div id="results-heading">
+                <h2 class="heading" style="color: rgba(64,110,88,1);">results</h2>
+            </div>
+            <div id="results"></div>
+        </div>
+
+    <script src="script/search.js"></script>
+    
+</body>
+</html>

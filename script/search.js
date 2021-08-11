@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
         let searchQuery = document.querySelector('input[name=search-query]').value;
 
         let fetchString = returnFetchString(searchQuery);
-        console.log(fetchString)
+        // console.log(fetchString)
         let json = [];
 
 
@@ -37,7 +37,7 @@ window.addEventListener('load', function() {
             response.json().then(function(json) {
 
                 let jsonItems = json.items;
-                console.log(jsonItems)
+                // console.log(jsonItems)
 
                 // if (jsonItems.length > 10) {
                 //     for (i = 0; i < 10; i++) {
@@ -61,11 +61,19 @@ window.addEventListener('load', function() {
                     for (i = 0; i < jsonItems.length; i++) {
 
                         // console.log(jsonItems[i].volumeInfo)
+                        let thumbnail = "";
+                        if(jsonItems[i].volumeInfo.imageLinks === undefined) {
+                            thumbnail = 'images/not-found.png';
+                        } else {
+                            thumbnail = jsonItems[i].volumeInfo.imageLinks.thumbnail;
+                        }
+
+                        
 
                         let book = {
                             title: jsonItems[i].volumeInfo.title,
                             author: jsonItems[i].volumeInfo.authors,
-                            thumbnail: jsonItems[i].volumeInfo.imageLinks.thumbnail
+                            thumbnail: thumbnail
                         }
 
                         let result = document.createElement('div');
